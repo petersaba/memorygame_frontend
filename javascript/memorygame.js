@@ -1,11 +1,26 @@
-function imagesOrder(){
-    const tempArr = new Array()
+const images = ['java.png', 'javascript.png', 'python.ico']
+
+
+function randomNumbers(){
+    const randomArr = new Array()
     let random
-    while(tempArr.length < 6){
+    while(randomArr.length < 6){
         random = Math.floor(Math.random() * 6)
-        if(tempArr.indexOf(random) == -1){
-            tempArr.push(random)
+        if(randomArr.indexOf(random) == -1){
+            randomArr.push(random)
         }
     }
-    return tempArr
+    return randomArr
+}
+
+function assignOrder(){
+    const imagesOrder = new Array()
+    const randomOrder = randomNumbers()
+    let j = 0 
+    for(const i of images){
+        imagesOrder[randomOrder[j++]] = i
+        imagesOrder[randomOrder[j++]] = i
+    }
+    console.log(imagesOrder)
+    return imagesOrder
 }
