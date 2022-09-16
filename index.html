@@ -10,16 +10,17 @@
     <h1>The Memory Game</h1>
     <section class="game">
         <div>
-            <div id="div0" onclick="reveal(event)"><img id="img0" src="images/question.png" alt=""></div>
-            <div id="div1" onclick="reveal(event)"><img id="img1" src="images/question.png" alt=""></div>
-            <div id="div2" onclick="reveal(event)"><img id="img2" src="images/question.png" alt=""></div>
+            <div id="div0" class="card" onclick="reveal(event)"><img class="image" id="img0" src="images/question.png" alt=""></div>
+            <div id="div1" class="card" onclick="reveal(event)"><img class="image" id="img1" src="images/question.png" alt=""></div>
+            <div id="div2" class="card" onclick="reveal(event)"><img class="image" id="img2" src="images/question.png" alt=""></div>
         </div>
         <div>
-            <div id="div3" onclick="reveal(event)"><img id="img3" src="images/question.png" alt=""></div>
-            <div id="div4" onclick="reveal(event)"><img id="img4" src="images/question.png" alt=""></div>
-            <div id="div5" onclick="reveal(event)"><img id="img5" src="images/question.png" alt=""></div>
+            <div id="div3" class="card" onclick="reveal(event)"><img class="image" id="img3" src="images/question.png" alt=""></div>
+            <div id="div4" class="card" onclick="reveal(event)"><img class="image" id="img4" src="images/question.png" alt=""></div>
+            <div id="div5" class="card" onclick="reveal(event)"><img class="image" id="img5" src="images/question.png" alt=""></div>
         </div>
     </section>
+    <h2>Your current score is: <span id="score">0</span></h2>
     <script src="javascript/memorygame.js"></script>
 </body>
 </html>

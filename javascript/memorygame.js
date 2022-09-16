@@ -2,6 +2,8 @@ const images = ['java.png', 'javascript.png', 'python.ico']
 let imagesOrder = assignOrder()
 const revealedImages = new Array()
 const revealedIds = new Array()
+let pairsDissapeared = 0
+let score = 0
 
 
 // generating numbers randomly between 0 and 6 but making an array of length 6 having only unique values
@@ -51,6 +53,10 @@ function checkResult(){
     if (revealedImages[0] == revealedImages[1]){
         document.getElementById("div" + revealedIds[0]).style.visibility = "hidden"
         document.getElementById("div" + revealedIds[1]).style.visibility = "hidden"
+        pairsDissapeared += 1
+        if (pairsDissapeared == 3){
+            restartGame()
+        }
     }else{
         document.getElementById("img" + revealedIds[0]).src = "images/question.png"
         document.getElementById("img" + revealedIds[1]).src = "images/question.png"
@@ -63,3 +69,19 @@ function resetArrays(){
     revealedImages.splice(0, 2)
     revealedIds.splice(0, 2)
 }
+
+// increase the score and reset variables and html elements to default and get a new random order for images
+function restartGame(){
+    document.getElementById("score").innerText = ++score
+    pairsDissapeared = 0
+    imagesOrder = assignOrder()
+    const allImages = document.querySelectorAll(".image")
+    for(const i of allImages){
+        i.src = "images/question.png"
+    }
+    const allDivs = document.querySelectorAll(".card")
+    for(const i of allDivs){
+        i.style.visibility = "visible"
+    }
+}
+
