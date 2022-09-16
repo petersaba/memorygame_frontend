@@ -1,5 +1,5 @@
 const images = ['java.png', 'javascript.png', 'python.ico']
-
+let imagesOrder = assignOrder()
 
 function randomNumbers(){
     const randomArr = new Array()
@@ -21,6 +21,14 @@ function assignOrder(){
         imagesOrder[randomOrder[j++]] = i
         imagesOrder[randomOrder[j++]] = i
     }
-    console.log(imagesOrder)
     return imagesOrder
+}
+
+function reveal(event){
+    let clickedElement = event.target
+    if(clickedElement.nodeName == "DIV"){
+        clickedElement = clickedElement.firstChild
+    }
+    const imageId = parseInt(clickedElement.id.slice(-1))
+    clickedElement.src = "images/" + imagesOrder[imageId]
 }
